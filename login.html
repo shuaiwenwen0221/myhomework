@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<meta charset="utf-8">
+	<title>登录</title>
+	<link rel="stylesheet" type="text/css" href="login.css">
+	<style type="text/css">
+		center {
+			background: url('image/u=190705479,1124541031&fm=26&gp=0[1].jpg');
+			height: 500px;
+		}
+	</style>
+</head>
+
+<script type="text/javascript">
+		 function checkfields(form) {
+            var vname = form.name.value;
+            var vpwd = form.pwd.value;
+           
+            submit1(form);
+            return true;
+
+        }
+
+        function submit1(form) {
+            var vname = form.name.value;
+            var vpwd = form.pwd.value;
+            if (vname == "zhangsan" && vpwd == "123") {
+                form.action = "index.html";
+                form.submit();
+            } else {
+                alert("账号或密码错误，请重新输入!");
+                form.action = "index.html";
+                form.submit();
+            }
+        }
+
+</script>
+<body>
+	<center>
+		<table width="100%" border="0" align="center" bgcolor="FFDC75">
+			<tr>
+				<td align="center"><font face="Verdana" size="+1"> 用户登陆
+				</font></td>
+			</tr>
+		</table>
+		<br>
+		<form name="f1" method="post" action="login">
+
+			<table align="center" border="1" bordercolor="FFDC75" cellpadding="3"
+				cellspacing="3">
+				<tr>
+					<td align="center">用户名</td>
+					<td><input type="text" name="name" maxlength="20"></td>
+				</tr>
+				<tr>
+					<td align="center">密码</td>
+					<td><input type="password" name="pwd" maxlength="20">
+					</td>
+				</tr>
+			</table>
+			<br> <input type="submit" value="提交" class="btn" onclick="checkfields(this.form)">&nbsp; 
+			<input type="reset" value="重置">
+		</form>
+	</center>
+</body>
+</html>
